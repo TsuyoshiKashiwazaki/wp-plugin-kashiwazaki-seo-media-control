@@ -1,0 +1,344 @@
+.ksmc-controls {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 3px;
+}
+
+.ksmc-bulk-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ksmc-bulk-section label {
+    font-weight: 600;
+    margin: 0;
+}
+
+.ksmc-bulk-section select {
+    min-width: 200px;
+}
+
+.ksmc-bulk-section button {
+    white-space: nowrap;
+}
+
+.ksmc-selected-count {
+    background: #2271b1;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.ksmc-media-table {
+    margin-top: 20px;
+}
+
+.ksmc-media-table th,
+.ksmc-media-table td {
+    vertical-align: middle;
+    padding: 8px 10px;
+}
+
+.ksmc-media-table .check-column {
+    width: 40px;
+}
+
+.ksmc-preview {
+    width: 80px;
+    text-align: center;
+}
+
+.ksmc-preview img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 3px;
+}
+
+.ksmc-preview .dashicons {
+    font-size: 30px;
+    color: #8c8f94;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.ksmc-filename {
+    min-width: 200px;
+}
+
+.ksmc-filename .row-actions {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* 編集可能フィールドのスタイル */
+.ksmc-editable {
+    position: relative;
+    cursor: pointer;
+    min-width: 120px;
+    max-width: 250px;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.ksmc-editable:hover {
+    background-color: #f0f6fc;
+    border: 1px solid #0969da;
+    box-shadow: 0 2px 8px rgba(9, 105, 218, 0.15);
+    transform: translateY(-1px);
+}
+
+.ksmc-editable .ksmc-display {
+    display: block;
+    padding: 6px 8px;
+    border-radius: 3px;
+    min-height: 20px;
+    word-wrap: break-word;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.ksmc-editable:hover .ksmc-display {
+    background-color: #fff;
+    border: 1px solid #d1d9e0;
+}
+
+.ksmc-editable .ksmc-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 2px solid #0969da;
+    border-radius: 3px;
+    font-size: 13px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+}
+
+.ksmc-editable textarea.ksmc-input {
+    min-height: 60px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.ksmc-editable input[type="datetime-local"] {
+    font-size: 12px;
+}
+
+.ksmc-editable select.ksmc-input {
+    font-size: 12px;
+}
+
+/* 編集状態のスタイル */
+.ksmc-editing {
+    background-color: #fff8dc !important;
+    border: 1px solid #f59e0b !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15) !important;
+    transform: translateY(-1px);
+}
+
+.ksmc-saving {
+    background-color: #ecfdf5 !important;
+    border: 1px solid #10b981 !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15) !important;
+}
+
+.ksmc-error {
+    background-color: #fef2f2 !important;
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15) !important;
+}
+
+.ksmc-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* メッセージスタイル */
+.ksmc-message {
+    margin: 15px 0;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.ksmc-message p {
+    margin: 0.5em 0;
+    font-weight: 600;
+    white-space: pre-line;
+    max-width: calc(100% - 40px);
+    word-wrap: break-word;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 3px;
+    overflow-wrap: break-word;
+}
+
+.ksmc-message.notice-success {
+    border-left: 4px solid #00a32a;
+    background-color: #f0f6fc;
+}
+
+.ksmc-message.notice-error {
+    border-left: 4px solid #d63638;
+    background-color: #fcf0f1;
+}
+
+.ksmc-message .notice-dismiss {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    border: none;
+    margin: 0;
+    padding: 9px;
+    background: none;
+    color: #787c82;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+}
+
+.ksmc-message .notice-dismiss:hover {
+    color: #d63638;
+}
+
+.ksmc-message .notice-dismiss:before {
+    background: none;
+    content: '\f153';
+    display: block;
+    font: normal 16px/20px dashicons;
+    speak: never;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+    .ksmc-editable {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 900px) {
+    .ksmc-bulk-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ksmc-bulk-section select,
+    .ksmc-bulk-section button {
+        width: 100%;
+    }
+
+    .ksmc-media-table .ksmc-preview {
+        display: none;
+    }
+
+    .ksmc-editable {
+        max-width: 150px;
+        font-size: 12px;
+    }
+
+    .ksmc-editable .ksmc-input {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ksmc-media-table {
+        font-size: 12px;
+    }
+
+    .ksmc-media-table th,
+    .ksmc-media-table td {
+        padding: 6px 8px;
+    }
+
+    .ksmc-editable {
+        max-width: 120px;
+    }
+}
+
+/* アニメーション */
+.ksmc-editable,
+.ksmc-editable .ksmc-display,
+.ksmc-editable .ksmc-input {
+    transition: all 0.2s ease;
+}
+
+/* フォーカス状態 */
+.ksmc-editable .ksmc-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.2);
+}
+
+/* フィルタセクション */
+.ksmc-filter-section {
+    border-left: 4px solid #007cba;
+}
+
+.ksmc-filter-section h3 {
+    color: #23282d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 一括変更セクション */
+.ksmc-bulk-section {
+    border-left: 4px solid #00a32a;
+}
+
+.ksmc-bulk-section h3 {
+    color: #23282d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* フィルタステータス */
+#ksmc-filter-status {
+    font-weight: 500;
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+/* スマート変更ボタン */
+#ksmc-smart-change {
+    position: relative;
+}
+
+#ksmc-smart-change:hover {
+    background-color: #005a87;
+    border-color: #005a87;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+
+    .ksmc-filter-section>div,
+    .ksmc-bulk-section>div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .ksmc-filter-section>div>div,
+    .ksmc-bulk-section>div>div {
+        width: 100%;
+    }
+}

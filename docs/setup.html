@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インストール・初期設定 - Kashiwazaki SEO Media Control マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+<button class="hamburger-btn" aria-label="メニュー">&#9776;</button>
+
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2 style="color:#fff;">Media Control</h2>
+        <span class="version">v1.0.0</span>
+        <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+    </div>
+    <ul>
+        <li><a href="index.html">概要</a></li>
+        <li class="active"><a href="setup.html">インストール・初期設定</a></li>
+        <li><a href="media-management.html">メディア管理</a></li>
+        <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <h1>インストール・初期設定</h1>
+    <p class="lead">Kashiwazaki SEO Media Control のインストール方法と、メディア管理機能を利用するための基本設定を説明します。</p>
+
+    <h2>インストール手順</h2>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-body">
+            <p>WordPress管理画面から <strong>プラグイン &gt; 新規追加</strong> に移動し、「Kashiwazaki SEO Media Control」を検索します。または、プラグインのZIPファイルを <strong>プラグイン &gt; 新規追加 &gt; プラグインのアップロード</strong> からアップロードします。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-body">
+            <p>「今すぐインストール」をクリックし、インストール完了後「有効化」をクリックします。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-body">
+            <p>管理画面の左メニューに「Kashiwazaki SEO Media Control」が追加されます。クリックしてメディア管理画面を開きます。</p>
+        </div>
+    </div>
+
+    <figure class="screenshot">
+        <img src="images/screenshots/00-menu-location.png" alt="管理画面メニューの位置" class="lightbox-trigger">
+        <figcaption>管理画面の左メニューにプラグインが追加されます</figcaption>
+    </figure>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">ヒント</div>
+        <p>有効化直後から、メディアライブラリの全ファイルに所有者情報が表示されるようになります。既存のメディアファイルの所有者情報も自動的に表示されます。</p>
+    </div>
+
+    <h2>管理画面の確認</h2>
+
+    <p>プラグインの有効化後、メディア管理画面の構成要素を確認します。</p>
+
+    <h3>画面構成</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width:35%;">要素</th>
+                <th>説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>メディア一覧</td>
+                <td>メディアライブラリの全ファイルを一覧表示します。ファイル名、サムネイル、所有者情報が表示されます。</td>
+            </tr>
+            <tr>
+                <td>所有者カラム</td>
+                <td>各メディアファイルの現在の所有者（アップロードしたユーザー）を表示します。</td>
+            </tr>
+            <tr>
+                <td>フィルターバー</td>
+                <td>所有者・ユーザー別にメディアを絞り込むためのドロップダウンフィルターです。</td>
+            </tr>
+            <tr>
+                <td>一括操作メニュー</td>
+                <td>選択した複数のメディアファイルに対して一括所有者変更を実行するメニューです。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>基本設定</h2>
+
+    <h3>ユーザー権限</h3>
+    <p>メディア管理機能にアクセスできるユーザーの権限レベルを確認します。</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width:35%;">権限</th>
+                <th>説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>管理者</td>
+                <td>全メディアファイルの閲覧・所有者変更・一括操作が可能です。</td>
+            </tr>
+            <tr>
+                <td>編集者</td>
+                <td>メディアの閲覧が可能です。所有者変更は管理者のみが実行できます。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">注意</div>
+        <p>所有者変更は WordPress の <code>wp_posts</code> テーブルの <code>post_author</code> フィールドを直接変更します。変更は即座に反映され、元に戻すには再度所有者変更を行う必要があります。</p>
+    </div>
+
+    <h3>管理画面アセット</h3>
+    <p>本プラグインは管理画面でのみCSS（6.3KB）とJavaScript（19KB）を読み込みます。フロントエンドでは一切のアセットを読み込まないため、サイトの表示速度に影響を与えません。</p>
+
+    <div class="callout callout-note">
+        <div class="callout-title">補足</div>
+        <p>本プラグインはフロントエンド出力（JSON-LD、メタタグ）を一切行いません。管理画面でのみ動作するため、サイトの表示速度やCore Web Vitalsに影響を与えません。</p>
+    </div>
+
+    <nav class="page-nav">
+        <a href="index.html" class="prev">&laquo; 概要</a>
+        <a href="media-management.html" class="next">メディア管理 &raquo;</a>
+    </nav>
+
+    <footer class="manual-footer">
+        <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+        <p>プラグイン: Kashiwazaki SEO Media Control v1.0.0</p>
+    </footer>
+</main>
+
+<div class="lightbox"></div>
+<script src="js/manual.js?v=1"></script>
+</body>
+</html>

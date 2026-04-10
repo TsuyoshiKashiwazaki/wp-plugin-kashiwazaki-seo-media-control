@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メディア管理 - Kashiwazaki SEO Media Control マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+<button class="hamburger-btn" aria-label="メニュー">&#9776;</button>
+
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2 style="color:#fff;">Media Control</h2>
+        <span class="version">v1.0.0</span>
+        <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+    </div>
+    <ul>
+        <li><a href="index.html">概要</a></li>
+        <li><a href="setup.html">インストール・初期設定</a></li>
+        <li class="active"><a href="media-management.html">メディア管理</a></li>
+        <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <h1>メディア管理</h1>
+    <p class="lead">メディアファイルの所有者表示、個別・一括での所有者変更、所有者別フィルター機能について解説します。</p>
+
+    <h2>所有者情報の確認</h2>
+
+    <p>メディア管理画面では、すべてのメディアファイルに対して所有者（アップロードしたユーザー）が表示されます。</p>
+
+    <figure class="screenshot">
+        <img src="images/screenshots/02-mediacontrol-detail.png" alt="メディア管理画面" class="lightbox-trigger">
+        <figcaption>メディアの所有者管理</figcaption>
+    </figure>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-body">
+            <p>管理画面の左メニューから「Kashiwazaki SEO Media Control」をクリックします。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-body">
+            <p>メディア一覧が表示されます。各ファイルの「所有者」カラムに、現在の所有者名が表示されます。</p>
+        </div>
+    </div>
+
+    <h2>個別所有者変更</h2>
+
+    <p>メディアファイルの所有者を個別に変更する手順を説明します。</p>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-body">
+            <p>メディア一覧から、所有者を変更したいファイルを選択します。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-body">
+            <p>所有者変更のドロップダウンから、新しい所有者となるユーザーを選択します。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-body">
+            <p>変更を適用します。AJAXにより即座に所有者が変更され、画面が更新されます。</p>
+        </div>
+    </div>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">注意</div>
+        <p>所有者変更は <code>wp_posts</code> テーブルの <code>post_author</code> を直接変更します。変更は即座に反映され、取り消し機能はありません。変更前に対象ファイルを確認してください。</p>
+    </div>
+
+    <h2>一括所有者変更</h2>
+
+    <p>複数のメディアファイルの所有者を一括で変更できます。チームメンバーの異動や退職時に、所有メディアを別のユーザーに移管する際に便利です。</p>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-body">
+            <p>メディア一覧で、所有者を変更したいファイルのチェックボックスをオンにします。複数ファイルを選択できます。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-body">
+            <p>一括操作メニューから「所有者変更」を選択し、新しい所有者となるユーザーを指定します。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-body">
+            <p>「適用」をクリックします。選択したすべてのファイルの所有者がAJAX経由で一括変更されます。</p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width:35%;">操作</th>
+                <th>説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>全選択</td>
+                <td>一覧のヘッダーにあるチェックボックスで、表示中の全ファイルを選択できます。</td>
+            </tr>
+            <tr>
+                <td>個別選択</td>
+                <td>各ファイルのチェックボックスで個別に選択します。</td>
+            </tr>
+            <tr>
+                <td>一括変更</td>
+                <td>選択したファイルの所有者を指定ユーザーに一括変更します。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">ヒント</div>
+        <p>フィルター機能と組み合わせると、特定ユーザーの全メディアを表示してから一括変更を行えるため、効率的な所有者移管が可能です。</p>
+    </div>
+
+    <h2>フィルター機能</h2>
+
+    <p>所有者別にメディアを絞り込み表示する機能です。AJAXによるリアルタイムフィルタリングで、ページ遷移なしに結果が更新されます。</p>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-body">
+            <p>メディア管理画面上部のフィルターバーで、絞り込みたい所有者をドロップダウンから選択します。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-body">
+            <p>「フィルター」ボタンをクリックすると、選択した所有者のメディアファイルのみが一覧に表示されます。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-body">
+            <p>フィルターを解除するには、ドロップダウンで「すべてのユーザー」を選択して再度フィルターを実行します。</p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width:35%;">フィルター条件</th>
+                <th>説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>すべてのユーザー</td>
+                <td>フィルターなしで全メディアファイルを表示します。</td>
+            </tr>
+            <tr>
+                <td>特定のユーザー</td>
+                <td>選択したユーザーが所有するメディアファイルのみ表示します。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout callout-note">
+        <div class="callout-title">補足</div>
+        <p>フィルター処理はAJAXで非同期的に実行されるため、大量のメディアファイルがある場合でもページ全体の再読み込みは発生しません。</p>
+    </div>
+
+    <h2>活用シーン</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width:35%;">シーン</th>
+                <th>推奨操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>チームメンバーの退職</td>
+                <td>フィルターで退職者のメディアを表示し、後任者に一括所有者変更を実行。</td>
+            </tr>
+            <tr>
+                <td>メディア管理の棚卸し</td>
+                <td>各ユーザーでフィルターし、不要なメディアの特定と整理を実施。</td>
+            </tr>
+            <tr>
+                <td>著者帰属の修正</td>
+                <td>外注ライターがアップロードした画像を、正しい著者に個別変更。</td>
+            </tr>
+            <tr>
+                <td>サイト移行後の整理</td>
+                <td>サイト移行でユーザーIDが変わった場合、正しいユーザーに所有者を再設定。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <nav class="page-nav">
+        <a href="setup.html" class="prev">&laquo; インストール・初期設定</a>
+        <a href="troubleshooting.html" class="next">トラブルシューティング &raquo;</a>
+    </nav>
+
+    <footer class="manual-footer">
+        <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+        <p>プラグイン: Kashiwazaki SEO Media Control v1.0.0</p>
+    </footer>
+</main>
+
+<div class="lightbox"></div>
+<script src="js/manual.js?v=1"></script>
+</body>
+</html>
